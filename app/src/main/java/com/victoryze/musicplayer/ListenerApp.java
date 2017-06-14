@@ -5,9 +5,11 @@ import android.app.Application;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.victoryze.musicplayer.injector.component.ApplicationComponent;
+
 import com.victoryze.musicplayer.injector.component.DaggerApplicationComponent;
 import com.victoryze.musicplayer.injector.module.ApplicationModule;
 import com.victoryze.musicplayer.injector.module.NetworkModule;
+import com.victoryze.musicplayer.permission.PermissionManager;
 
 /**
  * Created by dsz on 17/6/6.
@@ -25,6 +27,8 @@ public class ListenerApp extends Application {
 
         //初始化图片加载器
         initImageLoader();
+        PermissionManager.init(this);
+
 
     }
 

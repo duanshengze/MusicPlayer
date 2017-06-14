@@ -44,12 +44,32 @@ public class MusicDB extends SQLiteOpenHelper {
 
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase database) {
+        FavoriteSong.getInstance(mContext).onCreate(database);
+        MusicPlaybackState.getInstance(mContext).onCreate(database);
+        RecentStore.getInstance(mContext).onCreate(database);
+        SearchHistory.getInstance(mContext).onCreate(database);
+        SongPlayCount.getInstance(mContext).onCreate(database);
+
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        FavoriteSong.getInstance(mContext).onUpgrade(db,oldVersion,newVersion);
+        MusicPlaybackState.getInstance(mContext).onUpgrade(db,oldVersion,newVersion);
+        RecentStore.getInstance(mContext).onUpgrade(db,oldVersion,newVersion);
+        SearchHistory.getInstance(mContext).onUpgrade(db,oldVersion,newVersion);
+        SongPlayCount.getInstance(mContext).onUpgrade(db,oldVersion,newVersion);
+    }
 
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        FavoriteSong.getInstance(mContext).onDowngrade(db,oldVersion,newVersion);
+        MusicPlaybackState.getInstance(mContext).onDowngrade(db,oldVersion,newVersion);
+        RecentStore.getInstance(mContext).onDowngrade(db,oldVersion,newVersion);
+        SearchHistory.getInstance(mContext).onDowngrade(db,oldVersion,newVersion);
+        SongPlayCount.getInstance(mContext).onDowngrade(db,oldVersion,newVersion);
     }
 }

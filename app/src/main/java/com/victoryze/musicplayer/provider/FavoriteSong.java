@@ -38,7 +38,7 @@ public class FavoriteSong {
         builder.append(FavoriteSongColumns.NAME);
         builder.append("(");
         builder.append(FavoriteSongColumns.SONGID);
-        builder.append(" LONG NOT NULLL,");
+        builder.append(" LONG NOT NULL,");
         builder.append(FavoriteSongColumns.TIMEADDED);
         builder.append(" LONG NOT NULL);");
         db.execSQL(builder.toString());
@@ -109,7 +109,7 @@ public class FavoriteSong {
 
                         FavoriteSongColumns.SONGID+"=?",new String[]{String.valueOf(songId)},null,null,null
                         );
-                if (cursor!=null&&cursor.getCount()>=0){
+                if (cursor!=null&&cursor.getCount()>0){
                     database.delete(FavoriteSongColumns.NAME,FavoriteSongColumns.SONGID+"=?",new String[]{
                             String.valueOf(songId)
                     });

@@ -1,12 +1,33 @@
 package com.victoryze.musicplayer.util;
 
+import android.annotation.TargetApi;
+import android.content.ContentUris;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Build;
+import android.view.View;
+
 /**
  * Created by dsz on 17/6/6.
  */
 
 public class ListenerUtil {
 
+    public static boolean isMarshmallow() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
+    }
 
+    public static Uri getAlbumArtUri(long albumId){
+
+        return  ContentUris.withAppendedId(Uri.parse("content://media/external/audio/albumart"), albumId);
+    }
+
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public static boolean isRtl(Resources res) {
+        return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) &&
+                (res.getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL);
+    }
     public enum IdType{
         NA(0),
         Artist(1),
@@ -30,8 +51,5 @@ public class ListenerUtil {
 
             throw  new IllegalArgumentException("Unrecognized id:"+id);
         }
-
-
-
     }
 }

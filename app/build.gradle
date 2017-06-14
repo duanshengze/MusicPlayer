@@ -24,25 +24,44 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile 'com.android.support:cardview-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    //测试依赖包
     testCompile 'junit:junit:4.12'
+    testCompile "org.robolectric:robolectric:3.1.2"
 
     //rxjava
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
     //glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
     //dagger2
     annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
+    //retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+
+
     //imageloader
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
 
+    //slidinguppanel
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
 
-
+    //app theme engine
+    compile('com.github.naman14:app-theme-engine:0.5.2@aar') {
+        transitive = true
+    }
 
 
 }

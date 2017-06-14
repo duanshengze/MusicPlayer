@@ -46,6 +46,7 @@ public class SearchHistory {
         builder.append(" STRING NOT NULL,");
         builder.append(SearchHistoryColumns.TIMESEARCHED);
         builder.append(" LONG NOT NULL);");
+        db.execSQL(builder.toString());
 
     }
 

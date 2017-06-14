@@ -6,6 +6,7 @@ import com.victoryze.musicplayer.ListenerApp;
 import com.victoryze.musicplayer.injector.module.ApplicationModule;
 import com.victoryze.musicplayer.injector.module.NetworkModule;
 import com.victoryze.musicplayer.injector.scope.PerApplication;
+import com.victoryze.musicplayer.repository.interfaces.Repository;
 
 import javax.inject.Scope;
 
@@ -21,7 +22,7 @@ public interface ApplicationComponent {
 
     ListenerApp listenerApplication();
 
-//    Repository repository();
+    Repository repository();
 
 
 }

@@ -78,4 +78,15 @@ public class MusicPlaybackTrack implements Parcelable {
         }
         return  super.equals(obj);
     }
+
+
+    @Override
+    public String toString() {
+        return "MusicPlaybackTrack{" +
+                "mId=" + mId +
+                ", mSourceId=" + mSourceId +
+                ", mSourceType=" + mSourceType +
+                ", mSourcePosition=" + mSourcePosition +
+                '}';
+    }
 }
