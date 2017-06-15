@@ -21,6 +21,8 @@ public class PreferencesUtility {
 
     private static final String START_PAGE_INDEX = "start_page_index";
 
+    private static final String TOGGLE_ALBUM_GRID ="toggle_album_grid";
+
     private static volatile PreferencesUtility sInstance;
 
     private static SharedPreferences mPreferences;
@@ -86,5 +88,12 @@ public class PreferencesUtility {
     }
 
 
+    public boolean isAlbumsGrid() {
+        return mPreferences.getBoolean(TOGGLE_ALBUM_GRID,true);
+    }
 
+    public void setAlbumsInGrid(final  boolean b){
+        final SharedPreferences.Editor editor=mPreferences.edit();
+        editor.putBoolean(TOGGLE_ALBUM_GRID,b).apply();
+    }
 }

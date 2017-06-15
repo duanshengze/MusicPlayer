@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import com.afollestad.appthemeengine.ATE;
 import com.victoryze.musicplayer.Constants;
 import com.victoryze.musicplayer.R;
-import com.victoryze.musicplayer.ui.fragment.viewpager.AlbumFragment;
+import com.victoryze.musicplayer.ui.fragment.viewpager.AlbumsFragment;
 import com.victoryze.musicplayer.ui.fragment.viewpager.ArtistFragment;
 import com.victoryze.musicplayer.ui.fragment.viewpager.SongsFragment;
 import com.victoryze.musicplayer.util.ATEUtil;
@@ -140,7 +140,7 @@ public class MainFragment extends Fragment {
         Adapter adapter=new Adapter(getChildFragmentManager());
         adapter.addFragment(SongsFragment.newInstance(action),this.getString(R.string.songs));
         adapter.addFragment(ArtistFragment.newInstance(action),this.getString(R.string.artists));
-        adapter.addFragment(AlbumFragment.newInstance(action),this.getString(R.string.albums));
+        adapter.addFragment(AlbumsFragment.newInstance(action),this.getString(R.string.albums));
         viewPager.setAdapter(adapter);
 
     }

@@ -2,6 +2,7 @@ package com.victoryze.musicplayer.util;
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;
+import android.content.Context;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
@@ -17,6 +18,10 @@ public class ListenerUtil {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
+
+    public static boolean isLollipop() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+    }
     public static Uri getAlbumArtUri(long albumId){
 
         return  ContentUris.withAppendedId(Uri.parse("content://media/external/audio/albumart"), albumId);
@@ -27,6 +32,12 @@ public class ListenerUtil {
     public static boolean isRtl(Resources res) {
         return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) &&
                 (res.getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL);
+    }
+
+
+    public static final String makeLabel(final Context context, final int pluralInt,
+                                         final int number) {
+        return context.getResources().getQuantityString(pluralInt, number, number);
     }
     public enum IdType{
         NA(0),

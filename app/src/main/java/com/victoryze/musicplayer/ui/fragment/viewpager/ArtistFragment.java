@@ -10,8 +10,6 @@ import com.victoryze.musicplayer.Constants;
  */
 
 public class ArtistFragment extends Fragment {
-
-
     public static ArtistFragment newInstance(String action){
         Bundle args=new Bundle();
         switch (action){

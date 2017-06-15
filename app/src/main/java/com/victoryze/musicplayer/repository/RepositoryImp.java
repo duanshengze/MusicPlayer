@@ -4,7 +4,9 @@ import android.content.Context;
 
 import com.victoryze.musicplayer.api.KuGouApiService;
 import com.victoryze.musicplayer.api.LastFmApiService;
+import com.victoryze.musicplayer.dataloader.AlbumLoader;
 import com.victoryze.musicplayer.dataloader.SongLoader;
+import com.victoryze.musicplayer.mvp.model.Album;
 import com.victoryze.musicplayer.mvp.model.Song;
 import com.victoryze.musicplayer.repository.interfaces.Repository;
 
@@ -58,6 +60,30 @@ public class RepositoryImp implements Repository {
 
     @Override
     public Observable<List<Song>> getFavoriteSongs() {
+        return null;
+    }
+
+
+
+
+
+    @Override
+    public Observable<List<Album>> getAllAlbums() {
+        return AlbumLoader.getAllAlbums(mContext);
+    }
+
+    @Override
+    public Observable<List<Album>> getRecentlyAddedAlbums() {
+        return null;
+    }
+
+    @Override
+    public Observable<List<Album>> getRencentlyPlayedAlbums() {
+        return null;
+    }
+
+    @Override
+    public Observable<List<Album>> getFavoriteAlbums() {
         return null;
     }
 }

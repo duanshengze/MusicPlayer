@@ -31,6 +31,7 @@ public class NetworkModule {
     public NetworkModule(ListenerApp listenerApp){
         mListenerApp=listenerApp;
     }
+
     @PerApplication
     @Provides
     Repository provideRespoditory(){

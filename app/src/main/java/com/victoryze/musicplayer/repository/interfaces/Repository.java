@@ -1,5 +1,6 @@
 package com.victoryze.musicplayer.repository.interfaces;
 
+import com.victoryze.musicplayer.mvp.model.Album;
 import com.victoryze.musicplayer.mvp.model.Song;
 
 import java.util.List;
@@ -48,4 +49,17 @@ public interface Repository {
      * @return
      */
     Observable<List<Song>> getFavoriteSongs();
+
+
+    /**
+     * 获得所有的专辑
+     * @return
+     */
+    Observable<List<Album>> getAllAlbums();
+
+    Observable<List<Album>> getRecentlyAddedAlbums();
+
+    Observable<List<Album>> getRencentlyPlayedAlbums();
+
+    Observable<List<Album>> getFavoriteAlbums();
 }

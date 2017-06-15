@@ -96,12 +96,15 @@ public class SongsFragment extends Fragment implements SongsContract.View{
         return rootView;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mPresenter.unsubscribe();
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ATE.apply(this, ATEUtil.getATEKey(getActivity()));
-
         ATE.apply(this, ATEUtil.getATEKey(getActivity()));
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -112,12 +115,7 @@ public class SongsFragment extends Fragment implements SongsContract.View{
     }
 
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        mPresenter.unsubscribe();
 
-    }
 
     /**
      * dagger2 依赖注入

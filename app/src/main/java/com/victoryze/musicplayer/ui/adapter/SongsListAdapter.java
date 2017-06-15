@@ -41,14 +41,13 @@ public class SongsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if (arrayList==null){
             mArrayList=new ArrayList<>();
         }else {
-           mArrayList= arrayList;
+            mArrayList= arrayList;
         }
 
         mContext=context;
         mAction=action;
         isWitchHeader=withHeader;
         mSongIds=getSongIds();
-
 
     }
 
@@ -138,7 +137,20 @@ public class SongsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @NonNull
     @Override
     public String getSectionName(int position) {
-        return null;
+
+
+        if (mArrayList==null||mArrayList.size()==0||(isWitchHeader && position == 0)){
+            return "";
+        }
+      if (isWitchHeader){
+          position=position-1;
+      }
+        Character ch = mArrayList.get(position).title.charAt(0);
+        if (Character.isDigit(ch)) {
+            return "#";
+        } else{
+            return Character.toString(ch);
+        }
     }
 
     public long[] getSongIds() {

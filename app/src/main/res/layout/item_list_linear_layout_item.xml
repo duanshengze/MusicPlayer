@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-                android:background="?selectableItemBackground"
-              android:layout_width="match_parent"
-                android:layout_height="@dimen/linear_layout_list_item_height">
+    android:background="?selectableItemBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/linear_layout_list_item_height">
+
     <View
         android:id="@+id/playscore"
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         android:layout_height="fill_parent"
         android:layout_marginTop="12.0dip"
         android:layout_marginBottom="8.0dip" />
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="@dimen/linear_layout_list_item_image_size"
@@ -25,8 +27,7 @@
         android:layout_marginLeft="@dimen/linear_layout_list_item_padding"
         android:src="?default_album_drawable"
         android:scaleType="centerCrop"
-        android:layout_centerVertical="true"
-        />
+        android:layout_centerVertical="true" />
 
     <ImageView
         android:id="@+id/popup_menu"
@@ -38,6 +39,7 @@
         android:tint="@color/background_floating_material_dark"
         style="@style/Widget.AppCompat.ActionButton.Overflow"
         android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"/>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -66,7 +68,7 @@
                 style="@style/ListItemSubTitleStyle"/>
 
             <View
-                android:id="@+id/divider_subtitle"
+                android:id="@id/divider_subtitle"
                 android:background="@color/colorDividerBlack"
                 android:layout_width="1.0dip"
                 android:layout_height="@dimen/text_vertical_divider_height"
